@@ -1,17 +1,17 @@
 import random
-from os import remove
 
 lista = []
 listaOrd = []
 
 for x in range(10):
-    lista.append((random.randint(0, 20)))
+    lista.append(random.randint(0, 20))
 print(lista)
 
-for x in lista:
+while (len(lista) > 0):
     aux = 0
-    if x > aux:
-        aux = x
-        del lista[aux]
-        listaOrd.append(aux)
+    for x in range(len(lista)):
+        if lista[x] > aux:
+            aux = lista[x]
+    lista.remove(aux)
+    listaOrd.append(aux)
 print(listaOrd)
